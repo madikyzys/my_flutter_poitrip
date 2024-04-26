@@ -31,14 +31,16 @@ class MyHomePage extends StatelessWidget {
                 _buildCircularContainer(
                   color: Colors.black,
                   text: '20.5 km\nDistance',
+                  size: 140.0,
                 ),
                 _buildCircularContainer(
                   color: Colors.green,
                   text: '5 tons\nCO2 Compensation',
+                  size: 260.0,
                 ),
               ],
             ),
-            SizedBox(height: 50),
+            SizedBox(height: 20),
             Text(
               'Contribution to Ecology through Your Trips:',
               style: TextStyle(
@@ -72,12 +74,16 @@ class MyHomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildCircularContainer({required Color color, required String text}) {
+  Widget _buildCircularContainer({
+    required Color color,
+    required String text,
+    required double size,
+  }) {
     return Column(
       children: [
         Container(
-          height: 100,
-          width: 100,
+          height: size,
+          width: size,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: color,
@@ -111,7 +117,7 @@ class MyHomePage extends StatelessWidget {
       children: [
         CircleAvatar(
           backgroundColor: Colors.grey[300],
-          child: Text('🌲', style: TextStyle(fontSize: 24)),
+          child: Text('🌳', style: TextStyle(fontSize: 24)),
         ),
         SizedBox(width: 10),
         Expanded(
@@ -201,4 +207,11 @@ class MyHomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+void main() {
+  runApp(MaterialApp(
+    title: 'Trip App',
+    home: MyHomePage(),
+  ));
 }
